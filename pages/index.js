@@ -1,11 +1,10 @@
 import Header from '../components/header'
-import Link from 'next/link'
 
-export default function Index() {
-  return (
-    <div>
+const Landing = () => {
+  return <div>
       <Header />
-      <p>Hello Next.js</p>
+      <p>landing</p>
     </div>
-  );
 }
+
+export default Landing;
