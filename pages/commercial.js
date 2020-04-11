@@ -1,10 +1,7 @@
-import Header from '../components/header'
+import MainLayout from '../layouts/main.js'
 
-const Commercial = () => {
-  return <div>
-      <Header />
-      <p>commercial</p>
-    </div>
-}
+const Commercial = () => (
+  <MainLayout><p>Commercial</p></MainLayout>
+)
 
 export default Commercial;

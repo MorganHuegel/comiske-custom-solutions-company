@@ -1,10 +1,7 @@
-import Header from '../components/header'
+import MainLayout from '../layouts/main.js'
 
-const Residential = () => {
-  return <div>
-      <Header />
-      <p>residential</p>
-    </div>
-}
+const Residential = () => (
+  <MainLayout><p>Residential</p></MainLayout>
+)
 
 export default Residential;

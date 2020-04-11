@@ -1,10 +1,7 @@
-import Header from '../components/header'
+import MainLayout from '../layouts/main.js'
 
-const Electrical = () => {
-  return <div>
-      <Header />
-      <p>electrical</p>
-    </div>
-}
+const Electrical = () => (
+  <MainLayout><p>Electrical</p></MainLayout>
+)
 
 export default Electrical;

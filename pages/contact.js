@@ -1,10 +1,7 @@
-import Header from '../components/header'
+import MainLayout from '../layouts/main.js'
 
-const Contact = () => {
-  return <div>
-      <Header />
-      <p>contact</p>
-    </div>
-}
+const Contact = () => (
+  <MainLayout><p>Contact</p></MainLayout>
+)
 
 export default Contact;
