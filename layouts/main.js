@@ -1,5 +1,4 @@
-import {useState} from 'react'
-import Header from '../components/header'
+import Header from '../components/header/index'
 import Footer from '../components/footer'
 import HtmlHead from '../components/head'
 
@@ -10,15 +9,25 @@ const MainLayout = props => (
       <style jsx global>{`
         body {
           font-family: ${style.fontFamily};
-          background-color: ${style.lightGrayColor};
-          padding: 0;
+          padding: 20px;
           margin: 0;
         }
         body * {
           box-sizing: border-box;
+          padding: 0;
+          margin: 0;
         }
         button:hover {
           cursor: pointer;
+        }
+        .hidden {
+          display: none;
+        }
+        main {
+          min-height: calc(100vh - 108px - 58px)
+        }
+        ul {
+          list-style: none;
         }
       `}</style>
 
@@ -26,7 +35,9 @@ const MainLayout = props => (
 
       <Header />
 
-      {props.children}
+      <main>
+        {props.children}
+      </main>
 
       <Footer />
       
