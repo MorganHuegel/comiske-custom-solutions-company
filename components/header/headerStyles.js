@@ -1,8 +1,8 @@
 import styles from '../../style.js'
 
 const HeaderStyles = () => (
-  <style jsx>{`
-    header {
+  <style>{`
+    header .container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -21,12 +21,27 @@ const HeaderStyles = () => (
       align-items: flex-end;
     }
 
-    header ul.lg-screen {
-      display: flex;
+    header .lg-screen {
+      display: none;
     }
 
-    header .nav-item {
-      width: 100px;
+    header .sm-screen {
+      
+    }
+
+    
+    @media only screen and (min-width: ${styles.screenLg}) {
+      header .sm-screen {
+        display: none;
+      }
+      header ul.lg-screen {
+        display: flex;
+      }
+  
+      header .nav-item {
+        width: 100px;
+        text-align: center;
+      }
     }
   `}</style>
 )
