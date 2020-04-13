@@ -29,10 +29,6 @@ const HeaderStyles = () => (
     header .lg-screen {
       display: none;
     }
-    header .subnav {
-      display: none;
-    }
-
     
     @media only screen and (min-width: ${styles.screenLg}) {
       header img {
@@ -45,14 +41,6 @@ const HeaderStyles = () => (
 
       header ul.lg-screen {
         display: flex;
-      }
-  
-      header .nav-item {
-        width: 100px;
-      }
-
-      header ul.lg-screen .nav-item:hover .subnav {
-        display: initial;
       }
     }
   `}</style>
