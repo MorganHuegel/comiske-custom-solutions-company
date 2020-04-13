@@ -5,6 +5,6 @@ export default {
   fontFamily: 'Roboto Condensed',
   rootFontSizeLg: '16px',
   rootFontSizeSm: '14px',
-  screenSm: '500px',
+  screenMd: '500px',
   screenLg: '1000px'
 }

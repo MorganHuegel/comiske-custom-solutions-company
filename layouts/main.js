@@ -3,14 +3,16 @@ import Footer from '../components/footer'
 import HtmlHead from '../components/head'
 
 import style from '../style'
-import { useEffect, useState } from 'react'
 
 const MainLayout = props => (
   <div>
     <style jsx global>{`
+      :root {
+        font-size: ${style.rootFontSizeSm}
+      }
       body {
         font-family: ${style.fontFamily};
-        padding: 20px;
+        padding: 15px;
         margin: 0;
       }
       body * {
@@ -34,12 +36,27 @@ const MainLayout = props => (
         max-width: 1200px;
         margin: 0 auto;
       }
+
+      @media only screen and (min-width: ${style.screenMd}){
+        :root {
+          font-size: ${style.rootFontSizeLg}
+        }
+        body {
+          padding: 20px;
+        }
+        main {
+          min-height: calc(100vh - 108px - 58px)
+        }
+      }
+
     `}</style>
 
     <HtmlHead />
     <Header />
     <main>
-      {props.children}
+      <div>
+        {props.children}
+      </div>
     </main>
     <Footer />
     
