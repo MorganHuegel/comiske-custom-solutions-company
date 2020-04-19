@@ -3,21 +3,26 @@ import NavItem from './navItem'
 import HeaderStyles from './headerStyles'
 import headerLogo from '../../images/headerLogo.png'
 
+
 const dropdownItems = {
   commercial: [
-    {label: 'Fabrication', route: '/commercial'},
-    {label: 'Construction', route: '/commercial'},
-    {label: 'Energy Efficiency', route: '/commercial'}
+    {label: 'Fabrication', route: '/commercial#fabrication'},
+    {label: 'Construction', route: '/commercial#construction'},
+    {label: 'Energy Efficiency', route: '/commercial#energy'}
   ],
   residential: [
-    {label: 'Fabrication', route: '/commercial'},
-    {label: 'Construction', route: '/commercial'},
-    {label: 'Energy Efficiency', route: '/commercial'}
+    {label: 'Full Service Construction', route: '/residential#construction'},
+    {label: 'Roofing/Siding', route: '/residential#roofing'},
+    {label: 'Additions/Garages', route: '/residential#additions'},
   ],
   electrical: [
-    {label: 'Fabrication', route: '/commercial'},
-    {label: 'Construction', route: '/commercial'},
-    {label: 'Energy Efficiency', route: '/commercial'}
+    {label: 'Standby Generators', route: '/electrical#generator'},
+    {label: 'Residential Rewiring', route: '/electrical#residential'},
+    {label: 'Commercial Lighting', route: '/electrical#commercial'},
+    {label: 'A/V Systems', route: '/electrical#av'},
+    {label: 'Security/Access Control Systems', route: '/electrical#security'},
+    {label: 'Network Wiring', route: '/electrical#network'},
+    {label: 'Energy Savings Initiatives', route: '/electrical#energy'},
   ],
 }
 

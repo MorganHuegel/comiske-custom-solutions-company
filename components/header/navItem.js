@@ -15,20 +15,37 @@ const NavItem = props => {
   }
 
   return (
-    <li className='nav-item' onMouseEnter={expandDropdown} onMouseLeave={collapseDropdown}>
+    <li className='nav-item' 
+      onMouseEnter={expandDropdown} 
+      onMouseLeave={collapseDropdown} 
+      onFocus={expandDropdown} 
+      onBlur={collapseDropdown}
+      onClick={collapseDropdown}
+    >
       <Link href={props.href}><a>
         {props.label}
         {props.dropdown && <i className="fas fa-caret-down"></i>}
       </a></Link>
       {props.dropdown && <ul className='subnav'>
-        {props.dropdown.map(item => <li>{item.label}</li>)}
+        {props.dropdown.map(subnav => <li key={subnav.route} className='subnav-item'>
+          <Link href={subnav.route}><a>{subnav.label}</a></Link>
+        </li>)}
       </ul>}
   <style jsx>{`
     .nav-item {
-      position: relative;
-      width: 100px;
-      padding: 10px 0 0 10px;
       margin-left: 10px;
+      position: relative;
+    }
+
+    .nav-item a {
+      display: inline-block;
+      width: 107px;
+      padding: 10px;
+      text-align: center;
+    }
+    .nav-item:hover, .nav-item a:focus {
+      cursor: pointer;
+      background-color: ${styles.lightGrayColor};
     }
     .nav-item.expanded {
       background-color: ${styles.lightGrayColor};
@@ -37,21 +54,24 @@ const NavItem = props => {
       display: none;
     }
     .nav-item.expanded .subnav {
-      padding-top: 32px;
+      padding-top: 9px;
       display: initial;
       text-align: left;
       width: 200px;
       position: absolute;
-      top: 0px;
+      top: 30px;
       left: 0px;
       color: ${styles.primaryColor};
     }
     .nav-item.expanded .subnav li {
-      padding: 10px;
       border: 1px solid ${styles.lightGrayColor};
     }
     .nav-item.expanded .subnav li:hover {
       background-color: ${styles.lightGrayColor};
+    }
+    .nav-item.expanded .subnav a {
+      text-align: left;
+      width: initial;
     }
   `}</style>
     </li>
