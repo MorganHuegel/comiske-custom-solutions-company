@@ -13,10 +13,6 @@ const HeaderStyles = () => (
       justify-content: space-between;
     }
 
-    header h1 {
-      margin: 0;
-    }
-
     header img {
       max-width: 235px;
     }
@@ -26,20 +22,30 @@ const HeaderStyles = () => (
       align-items: flex-end;
     }
 
-    header .lg-screen {
+    header .lg-screen-nav {
       display: none;
+    }
+
+    @media only screen and (min-width: ${styles.screenMd}) {
+      header img {
+        max-width: 350px;
+      }
     }
     
     @media only screen and (min-width: ${styles.screenLg}) {
+      header h1 {
+        padding-bottom: 10px;
+      }
+
       header img {
         max-width: 450px;
       }
 
-      header .sm-screen {
+      header .sm-screen-nav {
         display: none;
       }
 
-      header ul.lg-screen {
+      header ul.lg-screen-nav {
         display: flex;
       }
     }

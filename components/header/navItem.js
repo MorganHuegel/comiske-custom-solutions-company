@@ -24,7 +24,7 @@ const NavItem = props => {
     >
       <Link href={props.href}><a>
         {props.label}
-        {props.dropdown && <i className="fas fa-caret-down"></i>}
+        {props.dropdown && <span>&nbsp;<i className="fas fa-caret-down"></i></span>}
       </a></Link>
       {props.dropdown && <ul className='subnav'>
         {props.dropdown.map(subnav => <li key={subnav.route} className='subnav-item'>
@@ -39,7 +39,7 @@ const NavItem = props => {
 
     .nav-item a {
       display: inline-block;
-      width: 107px;
+      width: 110px;
       padding: 10px;
       text-align: center;
     }
