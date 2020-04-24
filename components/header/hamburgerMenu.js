@@ -8,6 +8,12 @@ const HamburgerMenu = props => {
     if (event.currentTarget.parentNode.classList.contains('expanded')){
       event.currentTarget.parentNode.classList.remove('expanded')
     }
+    const navGroups = document.getElementsByClassName('nav-group')
+    for (let navGroup of navGroups){
+      if (navGroup.classList.contains('expanded')){
+        navGroup.classList.remove('expanded')
+      }
+    }
   }
 
   const toggleNavList = event => {
@@ -32,7 +38,7 @@ const HamburgerMenu = props => {
 
           return (
             <li className='nav-group' key={navData.mainRoute} onClick={toggleNavItem}>
-              {navData.label}
+              <span className='label'>{navData.label}</span>
               {(navData.dropdowns.length > 0) && <span>&nbsp;<i className="fas fa-caret-down"></i></span>}
               
               {(navData.dropdowns.length > 0) && (
@@ -91,6 +97,10 @@ const HamburgerMenu = props => {
         padding: 10px;
         border: 1px solid ${styles.lightGrayColor};
         color: ${styles.primaryColor};
+      }
+
+      .nav-group.expanded .label {
+        text-decoration: underline;
       }
 
       .nav-group-options {
