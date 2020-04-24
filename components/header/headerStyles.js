@@ -2,6 +2,10 @@ import styles from '../../style.js'
 
 const HeaderStyles = () => (
   <style>{`
+    header {
+      padding-bottom: 10px;
+    }
+
     header a {
       color: ${styles.primaryColor};
       text-decoration: none;
@@ -34,7 +38,7 @@ const HeaderStyles = () => (
     
     @media only screen and (min-width: ${styles.screenLg}) {
       header h1 {
-        padding-bottom: 10px;
+        padding-bottom: 6px;
       }
 
       header img {

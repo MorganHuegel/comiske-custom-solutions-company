@@ -19,6 +19,8 @@ const HamburgerIcon = props => {
           justify-content: space-around;
           width: 45px;
           height: 45px;
+          position: relative;
+          bottom: 5px;
         }
 
         .bar {

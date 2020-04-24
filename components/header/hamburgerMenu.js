@@ -44,7 +44,7 @@ const HamburgerMenu = props => {
               {(navData.dropdowns.length > 0) && (
                 <ul className='nav-group-options'>
                   {navData.dropdowns.map(nav => (
-                      <li>
+                      <li key={nav.route}>
                         <Link href={nav.route}><a>{nav.label}</a></Link>
                       </li>
                     )

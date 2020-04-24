@@ -52,14 +52,14 @@ const NavItem = props => {
     }
     .subnav {
       display: none;
+      background-color: white;
     }
     .nav-item.expanded .subnav {
-      padding-top: 9px;
       display: initial;
       text-align: left;
       width: 200px;
       position: absolute;
-      top: 30px;
+      top: 38px;
       left: 0px;
       color: ${styles.primaryColor};
     }

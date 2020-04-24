@@ -36,6 +36,10 @@ const MainLayout = props => (
         max-width: 1200px;
         margin: 0 auto;
       }
+      .container-fluid {
+        width: 100vw;
+        margin: 0 0 0 -15px;
+      }
 
       @media only screen and (min-width: ${style.screenMd}){
         :root {
@@ -43,6 +47,9 @@ const MainLayout = props => (
         }
         body {
           padding: 20px;
+        }
+        .container-fluid {
+          margin: 0 0 0 -20px;
         }
         main {
           min-height: calc(100vh - 108px - 58px)
