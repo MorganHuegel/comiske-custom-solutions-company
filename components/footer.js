@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Link from 'next/link'
 import ModalWindow from './modalWindow'
+import styles from '../style'
 
 const Footer = props => {
   const [isModalShowing, setIsModalShowing] = useState(false)
@@ -33,12 +33,21 @@ const Footer = props => {
     <style jsx>{`
       footer {
         padding: 20px;
-        background-color: red;
+        background-color: white;
+        color: ${styles.primaryColor};
       }
       footer > div {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+      }
+      footer a {
+        color: ${styles.primaryColor};
+        text-decoration: none;
+      }
+      footer a:hover, footer a:focus {
+        cursor: pointer;
+        text-decoration: underline;
       }
     `}</style>
   </footer>

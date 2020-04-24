@@ -12,7 +12,7 @@ const MainLayout = props => (
       }
       body {
         font-family: ${style.fontFamily};
-        padding: 15px;
+        padding: 15px 15px 0 15px;
         margin: 0;
       }
       body * {
@@ -27,7 +27,7 @@ const MainLayout = props => (
         display: none;
       }
       main {
-        min-height: calc(100vh - 108px - 58px)
+        min-height: calc(100vh - 64.8px - 56px - 15px); ${/* header, footer, body padding */''}
       }
       ul {
         list-style: none;
@@ -46,16 +46,21 @@ const MainLayout = props => (
           font-size: ${style.rootFontSizeLg}
         }
         body {
-          padding: 20px;
+          padding: 20px 20px 0 20px;
         }
         .container-fluid {
           margin: 0 0 0 -20px;
         }
         main {
-          min-height: calc(100vh - 108px - 58px)
+          min-height: calc(100vh - 89.2px - 59px - 20px); ${/* header, footer, body padding */''}
         }
       }
 
+      @media only screen and (min-width: ${style.screenLg}){
+        main {
+          min-height: calc(100vh - 115.5px - 59px - 20px); ${/* header, footer, body padding */''}
+        }
+      }
     `}</style>
 
     <HtmlHead />
