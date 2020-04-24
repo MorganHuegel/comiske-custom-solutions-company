@@ -16,7 +16,7 @@ const Footer = props => {
   return (
   <footer className='container-fluid'>
     <div className='container'>
-      <p>Copyright Morgan Huegel</p>
+      <p>&copy; Copyright Morgan Huegel</p>
       <a href='#' onClick={() => setIsModalShowing(true)}>Admin Login</a>
 
       <ModalWindow 
