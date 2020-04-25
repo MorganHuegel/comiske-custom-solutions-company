@@ -8,7 +8,7 @@ const VhBackground = props => {
       </div>
       <style jsx>{`
         .full-page {
-          height: calc(100vh ${props.header || ''});
+          min-height: calc(100vh ${props.header || ''});
           background-image: url(${props.img});
           background-size: cover;
           background-position: 50% 50%;
@@ -16,13 +16,13 @@ const VhBackground = props => {
 
         .color-overlay {
           padding: 15px;
-          height: 100%;
+          min-height: calc(100vh ${props.header || ''});
           width: 100%;
           background-color: ${props.bgColor};
         }
 
         @media only screen and (min-width: ${styles.screenMd}){
-          .cover-overlay {
+          .color-overlay {
             padding: 20px;
           }
         }
