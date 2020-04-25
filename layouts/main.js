@@ -66,9 +66,7 @@ const MainLayout = props => (
     <HtmlHead />
     <Header />
     <main>
-      <div>
-        {props.children}
-      </div>
+      {props.children}
     </main>
     <Footer />
     
