@@ -3,6 +3,24 @@ import VhBackground from '../components/vhBackground'
 import LandingInfoBox from '../components/landingInfoBox'
 import styles from '../style'
 
+const infoBoxConfig = {
+  commercial: {
+    href: '/commercial',
+    mainText: 'Commercial',
+    icon: <i className="fas fa-building"></i>
+  },
+  residential: {
+    href: '/residential',
+    mainText: 'Residential',
+    icon: <i className="fas fa-home"></i>
+  },
+  electrical: {
+    href: '/electrical',
+    mainText: 'Electrical',
+    icon: <i className="fas fa-charging-station"></i>
+  }
+}
+
 const Landing = () => (
   <MainLayout>
 
@@ -15,9 +33,9 @@ const Landing = () => (
 
     <VhBackground bgColor={'white'} overlayStyles={{display: 'flex', alignItems: 'center'}}>
       <div className='container info-box-container'>
-        <LandingInfoBox href='/commercial'/>
-        <LandingInfoBox href='/residential'/>
-        <LandingInfoBox href='/electrical'/>
+        <LandingInfoBox config={infoBoxConfig.commercial}/>
+        <LandingInfoBox config={infoBoxConfig.residential}/>
+        <LandingInfoBox config={infoBoxConfig.electrical}/>
       </div>
     </VhBackground>
 
@@ -42,7 +60,7 @@ const Landing = () => (
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         height: 100%;
       }
