@@ -13,7 +13,7 @@ const Landing = () => (
       </div>
     </VhBackground>
 
-    <VhBackground bgColor={'white'}>
+    <VhBackground bgColor={'white'} overlayStyles={{display: 'flex', alignItems: 'center'}}>
       <div className='container info-box-container'>
         <LandingInfoBox href='/commercial'/>
         <LandingInfoBox href='/residential'/>
@@ -38,6 +38,7 @@ const Landing = () => (
         margin-top: 40px;
       }
       .info-box-container {
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

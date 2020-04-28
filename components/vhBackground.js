@@ -1,9 +1,10 @@
 import styles from '../style'
 
 const VhBackground = props => {
+  console.log(props.styles)
   return (
     <section className='container-fluid full-page'>
-      <div className='color-overlay'>
+      <div className='color-overlay' style={{...props.overlayStyles}}>
         {props.children}
       </div>
       <style jsx>{`

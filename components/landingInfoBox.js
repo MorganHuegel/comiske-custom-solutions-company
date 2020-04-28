@@ -11,7 +11,8 @@ const LandingInfoBox = props => {
       </Link>
       <style jsx>{`
         .info-box {
-          width: 100%;
+          width: 90%;
+          max-width: 325px;
           height: 350px;
           margin: 10px 0;
           border: 1px solid ${styles.primaryColor};
@@ -22,6 +23,11 @@ const LandingInfoBox = props => {
           height: 100%;
         }
         @media only screen and (min-width: ${styles.screenMd}) {
+          .info-box {
+            max-width: 490px;
+          }
+        }
+        @media only screen and (min-width: ${styles.screenLg}) {
           .info-box {
             width: calc(33% - 20px);
             max-width: 325px;
