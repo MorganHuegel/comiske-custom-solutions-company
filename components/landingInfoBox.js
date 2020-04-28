@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from '../style'
 
 const LandingInfoBox = props => {
-  const { href, mainText, icon } = props.config
+  const { href, mainText, icon, links } = props.config
 
   return (
     <div className='info-box'>
@@ -16,10 +16,15 @@ const LandingInfoBox = props => {
           <div className='details'>
             <h3><span>{icon}</span>{mainText}</h3>
             <ul>
-            <li>Foo</li>
-            <li>Foo</li>
-            <li>Foo</li>
-            <li>Foo</li>
+              {links.map(link => (
+                <li className='details-link'>
+                  <Link href={link.route}>
+                    <a>
+                      {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </a>
@@ -78,6 +83,20 @@ const LandingInfoBox = props => {
         }
         .details span {
           margin-right: 10px;
+        }
+        .details ul {
+          padding-left: 20px;
+          list-style: initial;
+        }
+        .details-link {
+          padding: 8px 0;
+        }
+        .details-link a {
+          color: ${styles.lightGrayColor};
+          text-decoration: none;
+        }
+        .details-link a:hover, .details-link a:focus {
+          text-decoration: underline;
         }
         
         @media only screen and (min-width: ${styles.screenMd}) {

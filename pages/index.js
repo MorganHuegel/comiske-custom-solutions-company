@@ -7,17 +7,36 @@ const infoBoxConfig = {
   commercial: {
     href: '/commercial',
     mainText: 'Commercial',
-    icon: <i className="fas fa-building"></i>
+    icon: <i className="fas fa-building"></i>,
+    links: [
+      {label: 'Fabrication', route: '/commercial#fabrication'},
+      {label: 'Construction', route: '/commercial#construction'},
+      {label: 'Energy Efficiency', route: '/commercial#energy'}
+    ]
   },
   residential: {
     href: '/residential',
     mainText: 'Residential',
-    icon: <i className="fas fa-home"></i>
+    icon: <i className="fas fa-home"></i>,
+    links: [      
+      {label: 'Full Service Construction', route: '/residential#construction'},
+      {label: 'Roofing/Siding', route: '/residential#roofing'},
+      {label: 'Additions/Garages', route: '/residential#additions'}
+    ]
   },
   electrical: {
     href: '/electrical',
     mainText: 'Electrical',
-    icon: <i className="fas fa-charging-station"></i>
+    icon: <i className="fas fa-charging-station"></i>,
+    links: [
+      {label: 'Standby Generators', route: '/electrical#generator'},
+      {label: 'Residential Rewiring', route: '/electrical#residential'},
+      {label: 'Commercial Lighting', route: '/electrical#commercial'},
+      {label: 'A/V Systems', route: '/electrical#av'},
+      {label: 'Security/Access Control Systems', route: '/electrical#security'},
+      {label: 'Network Wiring', route: '/electrical#network'},
+      {label: 'Energy Savings Initiatives', route: '/electrical#energy'},
+    ]
   }
 }
 
