@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import MainLayout from '../layouts/main.js'
 import VhBackground from '../components/vhBackground'
 import LandingInfoBox from '../components/landingInfoBox'
@@ -58,8 +59,29 @@ const Landing = () => (
       </div>
     </VhBackground>
 
-    <VhBackground bgColor={styles.primaryColorTransparant}>
-      <p>Landing</p>
+    <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/stock-landing.jpg')}>
+      <div className='about'>
+        <h2>About</h2>
+        <p className='main-text'>
+          Comiske is the name, specializing is the game! We'll solve all of your unique problems with swiftness and competency.
+          If you need a service that is not listed above, send us an inquiry via the Contact Page.  Most likely, we're the
+          best people for the job.
+        </p>
+        <address>
+          <p>Let's connect for a consultation!</p>
+          <ul>
+            <li>
+              <Link href='/contact'><a>Contact Page</a></Link>
+            </li>
+            <li className='phone'>
+              <a href="tel:+13115552368">(311) 555-2368</a>
+            </li>
+            <li className='email'>
+              <a href="mailto:acct@comiske.com">acct@comiske.com</a>
+            </li>
+          </ul>
+        </address>
+      </div>
     </VhBackground>
 
     <style>{`
@@ -68,12 +90,18 @@ const Landing = () => (
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 3.1rem;
+        font-size: 2.3rem;
         color: white;
       }
       .title {
         margin-top: 40px;
       }
+      @media only screen and (min-width: ${styles.screenMd}) {
+        .banner {
+          font-size: 3.1rem;
+        }
+      }
+
       .info-box-container {
         width: 100%;
         display: flex;
@@ -82,6 +110,29 @@ const Landing = () => (
         justify-content: space-around;
         align-items: center;
         height: 100%;
+      }
+
+      .about {
+        min-height: calc(100vh - 40px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .about h2 {
+        font-size: 3.1rem;
+      }
+      .about .main-text {
+        line-height: 1.8rem;
+      }
+      .about address {
+        font-style: normal;
+        line-height: 1.8rem;
+      }
+      .about .phone a, .about .email a {
+        text-decoration: none;
+      }
+      .about, .about a {
+        color: white;
       }
     `}</style>
   </MainLayout>

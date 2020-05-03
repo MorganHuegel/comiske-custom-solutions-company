@@ -45,6 +45,7 @@ const LandingInfoBox = props => {
           color: ${styles.primaryColor};
           text-decoration: none;
           padding: 20px;
+          box-shadow: 2px 2px 11px black;
           transition: background-color 400ms, box-shadow 400ms;
         }
         .main {
