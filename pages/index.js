@@ -119,9 +119,10 @@ const Landing = () => (
         justify-content: space-around;
       }
       .about h2 {
-        font-size: 3.1rem;
+        font-size: 4.1rem;
       }
-      .about .main-text {
+      .about p {
+        font-size: 1.2rem;
         line-height: 1.8rem;
       }
       .about address {
@@ -133,6 +134,12 @@ const Landing = () => (
       }
       .about, .about a {
         color: white;
+      }
+      @media only screen and (min-width: ${styles.screenMd}) {
+        .about p {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+        }
       }
     `}</style>
   </MainLayout>

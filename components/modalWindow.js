@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from '../style'
 
 const ModalWindow = props => {
   const { closeModal, isModalShowing, isModalUnmounting } = props
@@ -39,9 +40,14 @@ const ModalWindow = props => {
         }
 
         .modal-content {
-          min-width: 500px;
-          min-height: 500px;
+          min-width: 300px;
+          min-height: 300px;
           background-color: white;
+        }
+        @media only screen and (min-width: ${styles.screenMd}) {
+          .modal-content {
+            min-width: 500px;
+          }
         }
       `}</style>
     </>
