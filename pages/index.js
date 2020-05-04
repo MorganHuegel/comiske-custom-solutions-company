@@ -60,7 +60,7 @@ const Landing = () => (
     </VhBackground>
 
     <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/stock-landing.jpg')}>
-      <div className='about'>
+      <div className='about container'>
         <h2>About</h2>
         <p className='main-text'>
           Comiske is the name, specializing is the game! We'll solve all of your unique problems with swiftness and competency.
