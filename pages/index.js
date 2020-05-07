@@ -91,6 +91,7 @@ const Landing = () => (
         flex-direction: column;
         justify-content: center;
         font-size: 2.3rem;
+        text-shadow: 2px 2px 0 black;
         color: white;
       }
       .title {
@@ -120,10 +121,12 @@ const Landing = () => (
       }
       .about h2 {
         font-size: 4.1rem;
+        text-shadow: 2px 2px 0px black;
       }
       .about p {
         font-size: 1.2rem;
         line-height: 1.8rem;
+        text-shadow: 2px 2px 0px black;
       }
       .about address {
         font-style: normal;

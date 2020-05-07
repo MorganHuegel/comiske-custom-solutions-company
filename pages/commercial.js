@@ -30,7 +30,7 @@ const config = {
 const Commercial = () => (
   <MainLayout>
 
-    <div className='overview'>
+    <div className='overview container'>
       <div className='summary'>
         <h2>Commercial Services</h2>
         <p>
@@ -54,7 +54,6 @@ const Commercial = () => (
         </ul>
       </div>
       <div className='image'>
-        <img src="https://bellonconstruction.com/wp-content/uploads/2018/05/questions-and-concerns-with-commercial-remodeling.jpg" alt="commercial construction"/>
       </div>
     </div>
 
@@ -67,36 +66,52 @@ const Commercial = () => (
     </div>
 
     <style>{`
+      .overview {
+        margin: 20px auto 30px auto;
+        display: flex;
+        flex-direction: column;
+      }
       .overview .summary {
         margin-bottom: 30px;
       }
+      .overview .image {
+        height: 50vh;
+        background: url("https://bellonconstruction.com/wp-content/uploads/2018/05/questions-and-concerns-with-commercial-remodeling.jpg");
+        background-size: cover;
+        background-position: 50% 50%;
+      }
       .summary h2 {
-        margin: 20px 0 30px 0;
+        margin-bottom: 20px;
+        font-size: 2.8rem;
+        line-height: 2.8rem;
       }
       .summary p {
+        margin-bottom: 10px;
       }
-      .summary {
+      .summary p, .summary ul {
         line-height: 1.5rem;
       }
       .summary ul {
         padding-left: 15px;
         list-style: initial;
       }
-      .overview > div {
-        display: inline-block;
-        width: 100%;
-      }
-      .overview img {
-        width: 100%
-      }
       .service-tiles {
         background-color: ${styles.lightGrayColor};
         padding: 15px;
       }
       @media only screen and (min-width: ${styles.screenMd}){
-        .service-tiles: padding: 20px;
-        .overview > div {
-          width: 50%;
+        .service-tiles {
+          padding: 20px;
+        }
+        .overview {
+          flex-direction: row;
+        }
+        .overview .summary, .overview .image {
+          flex: 1;
+        }
+        .overview .image {
+          height: initial;
+          margin-left: 20px;
         }
       }
     `}</style>
