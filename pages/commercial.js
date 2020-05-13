@@ -40,16 +40,16 @@ const Commercial = () => (
         </p>
         <ul>
           <li>
-            {/* <Link href='#fabrication'><a>Fabrication</a></Link> */}
+            <Link href='#fabrication'><a>Fabrication</a></Link>
           </li>
           <li>
-            {/* <Link href='#construction'><a>Construction</a></Link> */}
+            <Link href='#construction'><a>Construction</a></Link>
           </li>
           <li>
             <a href='#energy'>Energy Efficiency</a>
           </li>
           <li>
-            More (<Link href=''><a>contact</a></Link> us for a consult)
+            More (<Link href='/contact'><a>contact</a></Link> us for a consult)
           </li>
         </ul>
       </div>
@@ -68,6 +68,7 @@ const Commercial = () => (
     <style>{`
       .overview {
         margin: 20px auto 30px auto;
+        padding: 40px 0px;
         display: flex;
         flex-direction: column;
       }

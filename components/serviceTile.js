@@ -3,7 +3,7 @@ import styles from '../style'
 const ServiceTile = props => {
   const { config } = props
   return (
-    <div className='wrapper' id={config.href} name={config.href}>
+    <div className='wrapper' id={config.href.replace('#', '')} name={config.href.replace('#', '')}>
       {config.floatImg === 'left' && (
         <figure className='imgTile'>
           <img src={config.imageUrl} alt={`Image for ${config.title}`}/>
