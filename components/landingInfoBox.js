@@ -17,7 +17,7 @@ const LandingInfoBox = props => {
             <h3><span>{icon}</span>{mainText}</h3>
             <ul>
               {links.map(link => (
-                <li className='details-link'>
+                <li className='details-link' key={'link' + link.route}>
                   <Link href={link.route}>
                     <a>
                       {link.label}

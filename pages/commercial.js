@@ -40,10 +40,10 @@ const Commercial = () => (
         </p>
         <ul>
           <li>
-            <Link href='#fabrication'><a>Fabrication</a></Link>
+            {/* <Link href='#fabrication'><a>Fabrication</a></Link> */}
           </li>
           <li>
-            <Link href='#construction'><a>Construction</a></Link>
+            {/* <Link href='#construction'><a>Construction</a></Link> */}
           </li>
           <li>
             <a href='#energy'>Energy Efficiency</a>
