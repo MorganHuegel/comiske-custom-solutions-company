@@ -39,15 +39,11 @@ const Commercial = () => (
           and many other commercial environments. Common services include:
         </p>
         <ul>
-          <li>
-            <Link href='#fabrication'><a>Fabrication</a></Link>
-          </li>
-          <li>
-            <Link href='#construction'><a>Construction</a></Link>
-          </li>
-          <li>
-            <a href='#energy'>Energy Efficiency</a>
-          </li>
+          {Object.keys(config).map(service => (
+            <li key={config[service].href}>
+              <Link href={config[service].href}><a>{config[service].title}</a></Link>
+            </li>
+          ))}
           <li>
             More (<Link href='/contact'><a>contact</a></Link> us for a consult)
           </li>
@@ -65,7 +61,7 @@ const Commercial = () => (
       </div>
     </div>
 
-    <style>{`
+    <style jsx>{`
       .overview {
         margin: 20px auto 30px auto;
         padding: 40px 0px;
@@ -82,7 +78,7 @@ const Commercial = () => (
         background-position: 50% 50%;
       }
       .summary h2 {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         font-size: 2.8rem;
         line-height: 2.8rem;
       }

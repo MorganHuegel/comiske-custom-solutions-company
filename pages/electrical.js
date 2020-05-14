@@ -91,7 +91,7 @@ const Electrical = () => (
       </div>
     </div>
 
-    <style>{`
+    <style jsx>{`
       .overview {
         margin: 20px auto 30px auto;
         padding: 40px 0px;
@@ -108,7 +108,7 @@ const Electrical = () => (
         background-position: 50% 50%;
       }
       .summary h2 {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         font-size: 2.8rem;
         line-height: 2.8rem;
       }
