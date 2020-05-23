@@ -1,6 +1,6 @@
-import { useState } from 'react'
 import MainLayout from '../layouts/main.js'
 import ContactForm from '../components/contactForm'
+import ContactSuccess from '../components/contactSuccess'
 import styles from '../style'
 
 class Contact extends React.Component {
@@ -11,7 +11,22 @@ class Contact extends React.Component {
   }
 
   handleSubmit = values => {
-    console.log(values)
+    this.setState({isSubmitting: true}, () => {
+      const isSuccess = true;
+      if (isSuccess) {
+        return this.setState({
+          isSubmitting: false, 
+          isSuccess: true, 
+          isFailure: false
+        })
+      } else {
+        return this.setState({
+          isSubmitting: false, 
+          isSuccess: false, 
+          isFailure: true
+        })
+      }
+    })
   }
 
   render(){
@@ -19,14 +34,19 @@ class Contact extends React.Component {
       <MainLayout>
         <div className='container-fluid wrapper'>
           <div className='form-container'>
-            <h2>Contact Us</h2>
-            <p className='directions'>
-              Please submit the form below for all inquiries, 
-              or email <a href='mailto:acct@comiske.com'>acct@comiske.com</a> directly.
-              You can expect a response within 3 buisness days.
-              We look forward to making your next project a success!
-            </p>
-            <ContactForm isSubmitting={this.state.isSubmitting} handleSubmit={this.handleSubmit}/>
+            {!this.state.isSuccess && (
+              <div>
+                <h2>Contact Us</h2>
+                <p className='directions'>
+                  Please submit the form below for all inquiries 
+                  or email <a href='mailto:acct@comiske.com'>acct@comiske.com</a> directly.
+                  You can expect a response within 3 buisness days.
+                  We look forward to making your next project a success!
+                </p>
+                <ContactForm isSubmitting={this.state.isSubmitting} handleSubmit={this.handleSubmit}/>
+              </div>
+            )}
+            {this.state.isSuccess && <ContactSuccess />}
           </div>
         </div>
         <style jsx>{`
@@ -34,10 +54,15 @@ class Contact extends React.Component {
             background-color: ${styles.primaryColor};
             padding: 20px;
             height: 100%;
+            min-height: calc(100vh - 64.8px - 15px - 56px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
           }
           .form-container {
             margin: 0 auto;
             max-width: 600px;
+            width: 100%;
             background-color: rgb(240, 240, 240);
             padding: 20px;
             border-radius: 5px;
@@ -52,6 +77,12 @@ class Contact extends React.Component {
           @media only screen and (min-width: ${styles.screenMd}) {
             .wrapper {
               padding: 50px;
+              min-height: calc(100vh - 89.2px - 20px - 59px);
+            }
+          }
+          @media only screen and (min-width: ${styles.screenLg}) {
+            .wrapper {
+              min-height: calc(100vh - 115.5px - 20px - 59px);
             }
           }
         `}</style>

@@ -39,8 +39,8 @@ export default class ContactForm extends React.Component {
       const currentLength = updatedState.phone.value.length
       console.log(currentLength)
       if (
-        (currentLength === 3 && this.state.phone.value.length === 2 ) || 
-        (currentLength === 7 && this.state.phone.value.length === 6 )) 
+        (currentLength === 3 && this.state.phone.value.length === 2 && !this.state.phone.value.startsWith('1-')) || 
+        (currentLength === 7 && this.state.phone.value.length === 6 ) && !this.state.phone.value.startsWith('1-')) 
       {
         updatedState.phone.value += '-'
       }
@@ -77,7 +77,7 @@ export default class ContactForm extends React.Component {
       errors.email = emailField
       errors.phone = phoneField
     }
-    else if (!phoneRegex.test(values.phone)) {
+    else if (!values.email && !phoneRegex.test(values.phone)) {
       const phoneField = {...this.state.phone}
       phoneField.error = 'Please provide phone number in the format ### - ### - ####.'
       errors.phone = phoneField
