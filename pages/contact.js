@@ -10,6 +10,10 @@ class Contact extends React.Component {
     isFailure: false
   }
 
+  handleSubmit = values => {
+    console.log(values)
+  }
+
   render(){
     return (
       <MainLayout>
@@ -22,7 +26,7 @@ class Contact extends React.Component {
               You can expect a response within 3 buisness days.
               We look forward to making your next project a success!
             </p>
-            <ContactForm isSubmitting={this.state.isSubmitting}/>
+            <ContactForm isSubmitting={this.state.isSubmitting} handleSubmit={this.handleSubmit}/>
           </div>
         </div>
         <style jsx>{`
