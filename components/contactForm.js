@@ -131,6 +131,10 @@ export default class ContactForm extends React.Component {
         </div>
 
         <button type='submit' disabled={this.props.isSubmitting}>Send</button>
+        {this.props.isFailure && <p className='error-message'>
+          We're sorry, but we could not process this request. Please email us directly
+          at <a href='mailto:acct@comiske.com'>acct@comiske.com</a>, or call us at 814-673-0233.
+        </p>}
         <style jsx>{`
           .group {
             margin-bottom: 20px;

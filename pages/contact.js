@@ -12,21 +12,33 @@ class Contact extends React.Component {
 
   handleSubmit = values => {
     this.setState({isSubmitting: true}, () => {
-      return fetch('/api/contact').then(res => res.json()).then(res => console.log(res))
-      const isSuccess = true;
-      if (isSuccess) {
+      return fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
+      .then(res => res.json())
+      .then(res => {
+        if (!res.success === true){
+          return Promise.reject()
+        }
         return this.setState({
           isSubmitting: false, 
           isSuccess: true, 
           isFailure: false
         })
-      } else {
+      })
+      .catch(err => {
         return this.setState({
           isSubmitting: false, 
           isSuccess: false, 
           isFailure: true
         })
-      }
+      })
+
+
     })
   }
 
@@ -44,7 +56,7 @@ class Contact extends React.Component {
                   You can expect a response within 3 buisness days.
                   We look forward to making your next project a success!
                 </p>
-                <ContactForm isSubmitting={this.state.isSubmitting} handleSubmit={this.handleSubmit}/>
+                <ContactForm isSubmitting={this.state.isSubmitting} handleSubmit={this.handleSubmit} isFailure={this.state.isFailure}/>
               </div>
             )}
             {this.state.isSuccess && <ContactSuccess />}
