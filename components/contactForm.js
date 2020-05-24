@@ -33,11 +33,10 @@ export default class ContactForm extends React.Component {
     let updatedState = {}
     updatedState[fieldName] = {value: event.currentTarget.value, error: ''};
 
-    // For phone numbers, add the "-" automatically
     // When changning phone or email, reset the other's error message because only one of the fields is required
     if (fieldName === 'phone') {
+      // For phone numbers, add the "-" automatically
       const currentLength = updatedState.phone.value.length
-      console.log(currentLength)
       if (
         (currentLength === 3 && this.state.phone.value.length === 2 && !this.state.phone.value.startsWith('1-')) || 
         (currentLength === 7 && this.state.phone.value.length === 6 ) && !this.state.phone.value.startsWith('1-')) 
@@ -45,11 +44,14 @@ export default class ContactForm extends React.Component {
         updatedState.phone.value += '-'
       }
       updatedState.email = {value: this.state.email.value, error: ''}
+      // For phone numbers, if user types "-" when one is already there, just ignore it
+      if (updatedState.phone.value.endsWith("--")) {
+        return;
+      }
     } 
     else if (fieldName === 'email') {
       updatedState.phone = {value: this.state.phone.value, error: ''}
     }
-    console.log(updatedState)
     this.setState(updatedState)
   }
 

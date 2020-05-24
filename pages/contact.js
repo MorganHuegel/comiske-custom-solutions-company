@@ -12,6 +12,7 @@ class Contact extends React.Component {
 
   handleSubmit = values => {
     this.setState({isSubmitting: true}, () => {
+      return fetch('/api/contact').then(res => res.json()).then(res => console.log(res))
       const isSuccess = true;
       if (isSuccess) {
         return this.setState({
