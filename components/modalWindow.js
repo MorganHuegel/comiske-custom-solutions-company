@@ -40,13 +40,14 @@ const ModalWindow = props => {
         }
 
         .modal-content {
-          min-width: 300px;
-          min-height: 300px;
+          width: calc(100vw - 40px);
+          height: 300px;
           background-color: white;
+          border-radius: 5px;
         }
         @media only screen and (min-width: ${styles.screenMd}) {
           .modal-content {
-            min-width: 500px;
+            width: 500px;
           }
         }
       `}</style>
