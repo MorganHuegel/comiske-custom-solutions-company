@@ -8,7 +8,7 @@ const config = {
     href: "#fabrication",
     title: "Fabrication",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is fabrication, and what is your experience with it.",
-    imageUrl: "https://www.wwgmc.com/wp-content/uploads/2016/06/industrial-fabrication.jpg",
+    imageUrl: require("../images/commercial-fabrication.jpg"),
     floatImg: 'left'
   },
   construction: {

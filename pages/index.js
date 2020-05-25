@@ -44,7 +44,7 @@ const infoBoxConfig = {
 const Landing = () => (
   <MainLayout>
 
-    <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/stock-landing.jpg')} header={' - 64.5px'}>
+    <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/index-main.jpg')} header={' - 64.5px'}>
       <div className='container banner'>
         <h2><q>We work hard so you don't have to.</q></h2>
         <p className='title'>- Dave Comiske, founder</p>
@@ -59,7 +59,7 @@ const Landing = () => (
       </div>
     </VhBackground>
 
-    <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/stock-landing.jpg')}>
+    <VhBackground bgColor={styles.primaryColorTransparant} img={require('../images/index-about.jpg')}>
       <div className='about container'>
         <h2>About</h2>
         <p className='main-text'>

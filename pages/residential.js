@@ -8,21 +8,21 @@ const config = {
     href: "#construction",
     title: "Full Service Construction",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is full service construction, and what is your experience with it.",
-    imageUrl: "https://www.wwgmc.com/wp-content/uploads/2016/06/industrial-fabrication.jpg",
+    imageUrl: require('../images/residential-full.jpg'),
     floatImg: 'left'
   },
   roofing: {
     href: "#roofing",
     title: "Roofing/Siding",
     blurb: "Insert a blurb here to demonstrate expertise, saying how  the reader benefit from roofing and siding, and what is your experience with it.",
-    imageUrl: "https://patoutlaw.com/wp-content/uploads/2018/09/commercial-construction-leads1-e1507578728366.jpg",
+    imageUrl: require('../images/residential-roofing.jpg'),
     floatImg: 'right'
   },
   additions: {
     href: "#additions",
     title: "Additions/Garages",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from additions and garages, and what is your experience with it.",
-    imageUrl: "https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/firstfuel_1_721_420_80_s_c1.jpg",
+    imageUrl: require('../images/residential-garage.jpg'),
     floatImg: 'left'
   }
 }
@@ -74,7 +74,7 @@ const Residential = () => (
       }
       .overview .image {
         height: 50vh;
-        background: url("https://www.overheadsolutionsinc.com/Content/files/GreenBayRoofConstruction.jpg");
+        background: url("${require('../images/index-main.jpg')}");
         background-size: cover;
         background-position: 50% 50%;
       }
