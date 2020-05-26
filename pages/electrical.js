@@ -8,7 +8,7 @@ const config = {
     href: "#generator",
     title: "Standby Generators",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is standby generators, and what is your experience with it.",
-    imageUrl: "https://www.wwgmc.com/wp-content/uploads/2016/06/industrial-fabrication.jpg",
+    imageUrl: require('../images/electrical-generator.jpg'),
     floatImg: 'left'
   },
   residential: {
@@ -103,7 +103,7 @@ const Electrical = () => (
       }
       .overview .image {
         height: 50vh;
-        background: url("https://piperelectric.com/wp-content/uploads/2014/02/Emergency-Electrical-Services.jpg");
+        background: url("${require('../images/electrical-main.jpg')}");
         background-size: cover;
         background-position: 50% 50%;
       }

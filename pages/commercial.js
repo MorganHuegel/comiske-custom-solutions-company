@@ -20,7 +20,7 @@ const config = {
   },
   energy: {
     href: "#energy",
-    title: "Energy",
+    title: "Energy Efficiency",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is energy efficiency and what is your experience with it.",
     imageUrl: "https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/firstfuel_1_721_420_80_s_c1.jpg",
     floatImg: 'left'
