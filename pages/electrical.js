@@ -15,42 +15,42 @@ const config = {
     href: "#residential",
     title: "Residential Rewiring",
     blurb: "Insert a blurb here to demonstrate expertise, saying how  the reader benefit from your services, what is residential rewiring and what is your experience with it.",
-    imageUrl: "https://patoutlaw.com/wp-content/uploads/2018/09/commercial-construction-leads1-e1507578728366.jpg",
+    imageUrl: require('../images/electrical-rewiring.jpg'),
     floatImg: 'right'
   },
   commercial: {
     href: "#commercial",
     title: "Commercial Lighting",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is commercial lighting and what is your experience with it.",
-    imageUrl: "https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/firstfuel_1_721_420_80_s_c1.jpg",
+    imageUrl: require('../images/electrical-lighting.jpg'),
     floatImg: 'left'
   },
   av: {
     href: "#av",
     title: "A/V Systems",
     blurb: "Insert a blurb here to demonstrate expertise, saying how  the reader benefit from your services, what is A/V Systems and what is your experience with it.",
-    imageUrl: "https://patoutlaw.com/wp-content/uploads/2018/09/commercial-construction-leads1-e1507578728366.jpg",
+    imageUrl: require('../images/electrical-av.jpg'),
     floatImg: 'right'
   },
   security: {
     href: "#security",
     title: "Security/Access Control Systems",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is security and what is your experience with it.",
-    imageUrl: "https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/firstfuel_1_721_420_80_s_c1.jpg",
+    imageUrl: require('../images/electrical-security.jpg'),
     floatImg: 'left'
   },
   network: {
     href: "#network",
     title: "Network Wiring",
     blurb: "Insert a blurb here to demonstrate expertise, saying how  the reader benefit from your services, what is Network Wiring and what is your experience with it.",
-    imageUrl: "https://patoutlaw.com/wp-content/uploads/2018/09/commercial-construction-leads1-e1507578728366.jpg",
+    imageUrl: require('../images/electrical-network.jpeg'),
     floatImg: 'right'
   },
   energy: {
     href: "#energy",
     title: "Energy Savings Initiative",
     blurb: "Insert a blurb here to demonstrate expertise, saying how the reader benefit from your services, what is your energy saving strategy and what is your experience with it.",
-    imageUrl: "https://assets.greentechmedia.com/assets/content/cache/made/assets/content/cache/remote/https_assets.greentechmedia.com/content/images/articles/firstfuel_1_721_420_80_s_c1.jpg",
+    imageUrl: require('../images/electrical-energy.jpeg'),
     floatImg: 'left'
   },
 }
