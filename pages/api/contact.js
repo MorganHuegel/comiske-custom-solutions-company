@@ -37,7 +37,7 @@ export default (req, res) => {
       <p>Service: ${req.body.service || 'n/a'}</p>
       <p>Message: ${req.body.message || 'n/a'}</p>
       <br>
-      <p><em>Do not REPLY to this email because it will just go to the developer, not the person who submitted the form.</em></p>
+      <p><em>Do not REPLY to this email because it will just go to the developer, not the person who submitted the form. </em></p>
     `
   }, (err, info) => {
     if (!err) {
