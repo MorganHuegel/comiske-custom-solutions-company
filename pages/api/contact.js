@@ -14,6 +14,10 @@ const transporter = nodemailer.createTransport({
 });
 
 export default (req, res) => {
+  console.log('EMAIL TO: ', emailTo)
+  console.log('GMAIL USERNAME: ', gmailUsername)
+  console.log('REQUEST BODY: ', req.body)
+
   transporter.sendMail({
     from: 'Website Inquiry <inquiry@comiske.com>',
     to: emailTo,
@@ -40,6 +44,9 @@ export default (req, res) => {
       <p><em>Do not REPLY to this email because it will just go to the developer, not the person who submitted the form. </em></p>
     `
   }, (err, info) => {
+    console.log('ERROR: ', JSON.stringify(err))
+    console.log('INFO: ', JSON.stringify(info))
+
     if (!err) {
       // Add messageId and message to a database somewhere from info object
       return res.status(200).json({success: true})
