@@ -1,8 +1,9 @@
 const nodemailer = require("nodemailer");
-const emailTo = require('dotenv').config({path: '.env'}).parsed.CONTACT_EMAIL_TO_1
-const emailToCc = require('dotenv').config({path: '.env'}).parsed.CONTACT_EMAIL_TO_2
-const gmailUsername = require('dotenv').config({path: '.env'}).parsed.CONTACT_EMAIL_FROM_USERNAME
-const gmailPassword = require('dotenv').config({path: '.env'}).parsed.CONTACT_EMAIL_FROM_PASSWORD
+require('dotenv').config()
+const emailTo = process.env.CONTACT_EMAIL_TO_1
+const emailToCc = process.env.CONTACT_EMAIL_TO_2
+const gmailUsername = process.env.CONTACT_EMAIL_FROM_USERNAME
+const gmailPassword = process.env.CONTACT_EMAIL_FROM_PASSWORD
 
 // To configure with Gmail account: https://blog.mailtrap.io/nodemailer-gmail/
 const transporter = nodemailer.createTransport({
