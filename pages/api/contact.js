@@ -1,24 +1,33 @@
 const nodemailer = require("nodemailer");
 require('dotenv').config()
-const emailTo = process.env.CONTACT_EMAIL_TO_1
-const emailToCc = process.env.CONTACT_EMAIL_TO_2
-const gmailUsername = process.env.CONTACT_EMAIL_FROM_USERNAME
-const gmailPassword = process.env.CONTACT_EMAIL_FROM_PASSWORD
+const {
+  CONTACT_EMAIL_TO_1: emailTo, 
+  CONTACT_EMAIL_TO_2: emailToCc,
+  CONTACT_EMAIL_FROM_USERNAME: user,
+  CONTACT_EMAIL_FROM_PASSWORD: pass,
+  OAUTH_CLIENT_ID: clientId,
+  OAUTH_CLIENT_SECRET: clientSecret,
+  OAUTH_ACCESS_TOKEN: accessToken,
+  OAUTH_REFRESH_TOKEN: refreshToken,
+  OAUTH_EXPIRY_DATE: expires
+} = process.env
 
-// To configure with Gmail account: https://blog.mailtrap.io/nodemailer-gmail/
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  service: 'Gmail',
   auth: {
-    user: gmailUsername,
-    pass: gmailPassword
+    user,
+    pass,
+    type: 'OAuth2',
+    clientId,
+    clientSecret,
+    refreshToken,
+    accessToken,
+    expires
   }
 });
 
 export default (req, res) => {
-  console.log('EMAIL TO: ', emailTo)
-  console.log('GMAIL USERNAME: ', gmailUsername)
-  console.log('REQUEST BODY: ', req.body)
-
   transporter.sendMail({
     from: 'Website Inquiry <inquiry@comiske.com>',
     to: emailTo,
