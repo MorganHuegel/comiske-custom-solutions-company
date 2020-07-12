@@ -28,6 +28,7 @@ const Footer = props => {
   <footer className='container-fluid'>
     <div className='container'>
       <p>&copy; Copyright Morgan Huegel</p>
+      <a href="/privacy-policy.pdf" target="_blank">Privacy Policy</a>
       <a href='#' onClick={() => setIsModalShowing(true)}>Admin Login</a>
 
       <ModalWindow 

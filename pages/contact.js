@@ -11,7 +11,7 @@ class Contact extends React.Component {
   }
 
   handleSubmit = values => {
-    this.setState({isSubmitting: true}, () => {
+    this.setState({isSubmitting: true, isFailure: false}, () => {
       return fetch('/api/contact', {
         method: 'POST',
         headers: {

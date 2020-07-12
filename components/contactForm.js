@@ -26,6 +26,10 @@ export default class ContactForm extends React.Component {
         value: '',
         error: ''
       },
+      privacy: {
+        value: false,
+        error: ''
+      },
     }
   }
 
@@ -51,6 +55,8 @@ export default class ContactForm extends React.Component {
     } 
     else if (fieldName === 'email') {
       updatedState.phone = {value: this.state.phone.value, error: ''}
+    } else if (fieldName === 'privacy') {
+      updatedState[fieldName] = {value: event.currentTarget.checked, error: ''}
     }
     this.setState(updatedState)
   }
@@ -63,6 +69,7 @@ export default class ContactForm extends React.Component {
       phone: this.state.phone.value,
       service: this.state.service.value,
       message: this.state.message.value,
+      privacy: this.state.privacy.value
     }
 
     let errors = {}
@@ -70,7 +77,7 @@ export default class ContactForm extends React.Component {
       const field = {...this.state.name}
       field.error = 'Please provide your name.'
       errors.name = field
-    } 
+    }
     if (!values.email && !values.phone) {
       const emailField = {...this.state.email}
       emailField.error = 'Please provide an email address or phone number for us to reach you.'
@@ -83,6 +90,11 @@ export default class ContactForm extends React.Component {
       const phoneField = {...this.state.phone}
       phoneField.error = 'Please provide phone number in the format ### - ### - ####.'
       errors.phone = phoneField
+    }
+    if (!values.privacy) {
+      const field = {...this.state.privacy}
+      field.error = 'Please accept our privacy policy to continue.'
+      errors.privacy = field
     }
 
     if (Object.keys(errors).length) {
@@ -130,6 +142,14 @@ export default class ContactForm extends React.Component {
           {this.state.message.error && <p className='error-message'>{this.state.message.error}</p>}
         </div>
 
+        <div className={`group ${this.state.privacy.error && 'error'}`}>
+          <label htmlFor='privacy'>
+            <input type='checkbox' name='privacy' id='privacy' onChange={e => this.handleChange(e, 'privacy')} value={this.state.privacy.value} />
+            &nbsp;&nbsp;Accept our <a href='/privacy-policy.pdf' target='_blank'>Privacy Policy</a>
+          </label>
+          {this.state.privacy.error && <p className='error-message'>{this.state.privacy.error}</p>}
+        </div>
+
         <button type='submit' disabled={this.props.isSubmitting}>Send</button>
         {this.props.isFailure && <p className='error-message'>
           We're sorry, but we could not process this request. Please email us directly
@@ -142,6 +162,9 @@ export default class ContactForm extends React.Component {
           .group.error input, .group.error textarea {
             background-color: rgb(255, 235, 235);
           }
+          .group.error label[for=privacy] {
+            color: red;
+          }
 
           input, textarea {
             font-size: 1rem;
@@ -149,10 +172,16 @@ export default class ContactForm extends React.Component {
             width: 100%;
             border-radius: 5px;
           }
+          input[type=checkbox] {
+            width: initial;
+          }
 
           label {
             margin: 5px 0;
             display: block;
+          }
+          label[for=privacy] {
+            display: inline-block;
           }
 
           .error-message {
